@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5B2D8E"/>
+      <stop offset="50%" stop-color="#4A2080"/>
+      <stop offset="100%" stop-color="#3A1870"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="400" height="400" rx="20" fill="url(#bg)"/>
+
+  <!-- Dubai Skyline silhouette (subtle) -->
+  <path d="M0 320 L30 310 L45 280 L55 290 L70 260 L80 270 L95 240 L105 250 L120 230 L130 240
+           L145 200 L150 195 L155 200 L160 210 L170 190 L175 185 L180 190 L190 220
+           L200 180 L205 175 L210 180 L215 195 L220 210
+           L230 230 L245 250 L260 260 L275 270 L290 275 L310 280 L330 290 L350 300 L370 310 L400 320
+           L400 400 L0 400 Z"
+        fill="#3A1565" opacity="0.4"/>
+
+  <!-- People group -->
+  <!-- Person left (back) -->
+  <circle cx="145" cy="135" r="18" fill="white"/>
+  <path d="M120 195 C120 170 145 158 145 158 C145 158 170 170 170 195 L170 200 C170 205 165 208 160 208 L130 208 C125 208 120 205 120 200 Z" fill="white"/>
+
+  <!-- Person right (back) -->
+  <circle cx="255" cy="135" r="18" fill="white"/>
+  <path d="M230 195 C230 170 255 158 255 158 C255 158 280 170 280 195 L280 200 C280 205 275 208 270 208 L240 208 C235 208 230 205 230 200 Z" fill="white"/>
+
+  <!-- Person center (front, slightly larger) -->
+  <circle cx="200" cy="125" r="22" fill="white"/>
+  <path d="M170 195 C170 165 200 150 200 150 C200 150 230 165 230 195 L230 202 C230 208 224 212 218 212 L182 212 C176 212 170 208 170 202 Z" fill="white"/>
+
+  <!-- Growth arrow -->
+  <path d="M175 160 L210 130 L245 145 L280 105" stroke="#E8A020" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Arrow head -->
+  <polygon points="280,105 268,100 272,115" fill="#E8A020"/>
+
+  <!-- Text: DUBAI SYNDICATE -->
+  <text x="200" y="270" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="900" letter-spacing="3" fill="#E8A020">DUBAI SYNDICATE</text>
+
+  <!-- Subtitle -->
+  <text x="200" y="305" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="600" letter-spacing="1.5" fill="white" opacity="0.9">Dubai Largest Business Network</text>
+</svg>
