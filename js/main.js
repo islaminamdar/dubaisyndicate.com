@@ -1,5 +1,5 @@
 // ========================================
-// DUBAI SYNDICATE — Main JavaScript
+// DUBAI SYNDICATE â Main JavaScript
 // ========================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     animateElements.forEach(el => observer.observe(el));
 
-    // Contact Form → WhatsApp
+    // Contact Form â WhatsApp
     const form = document.getElementById('contactForm');
     if (form) {
         form.addEventListener('submit', (e) => {
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const message = document.getElementById('message').value;
 
             const waMessage = encodeURIComponent(
-                `*New Enquiry — Dubai Syndicate*\n\n` +
+                `*New Enquiry â Dubai Syndicate*\n\n` +
                 `*Name:* ${name}\n` +
                 `*Mobile:* ${mobile}\n` +
                 `*Business:* ${business}\n` +
@@ -141,10 +141,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 const target = entry.target;
                 const text = target.textContent;
-                const num = parseInt(text);
+                const num = parseInt(text.replace(/,/g, ''));
                 if (isNaN(num)) return;
 
-                const suffix = text.replace(/[0-9]/g, '');
+                const suffix = text.replace(/[0-9,]/g, '');
                 let current = 0;
                 const increment = num / 40;
                 const timer = setInterval(() => {
@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         current = num;
                         clearInterval(timer);
                     }
-                    target.textContent = Math.floor(current) + suffix;
+                    target.textContent = Math.floor(current).toLocaleString() + suffix;
                 }, 30);
 
                 counterObserver.unobserve(target);
