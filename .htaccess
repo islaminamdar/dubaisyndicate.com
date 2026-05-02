@@ -1,27 +1,39 @@
-# Force HTTPS
+Options -Indexes
+Options +FollowSymLinks
+
+# Custom 404
+ErrorDocument 404 /index.html
+
 RewriteEngine On
+
+# Redirect www to non-www
+RewriteCond %{HTTP_HOST} ^www\.dubaisyndicate\.com [NC]
+RewriteRule ^(.*)$ https://dubaisyndicate.com/$1 [R=301,L]
+
+# Force HTTPS
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Remove .html extension
+# Clean URLs (no .html extension)
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html [L]
 
 # Compression
 <IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json
+    AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json text/xml
 </IfModule>
 
 # Cache Control
 <IfModule mod_expires.c>
     ExpiresActive On
-    ExpiresByType image/png "access plus 1 month"
-    ExpiresByType image/jpeg "access plus 1 month"
-    ExpiresByType image/webp "access plus 1 month"
-    ExpiresByType text/css "access plus 1 week"
-    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
     ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
 </IfModule>
 
 # Security Headers
@@ -30,6 +42,3 @@ RewriteRule ^(.*)$ $1.html [L]
     Header set X-Frame-Options "SAMEORIGIN"
     Header set X-XSS-Protection "1; mode=block"
 </IfModule>
-
-# Custom 404
-ErrorDocument 404 /index.html
